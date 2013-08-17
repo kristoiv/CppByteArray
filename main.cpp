@@ -5,11 +5,8 @@
 
 int main(int argc, char **argv)
 {
-    Compression::Zlib zlib;
-
     // Get some data ready
-    std::string data("Test message again again again again again again");
-    Utilities::ByteArray bytes(data.data(), data.size());
+    Utilities::ByteArray bytes("Test message again again again again again again");
     std::cout << "Orig data: '" << bytes.data() << "'" << std::endl;
 
     // Deflate (compress) it
