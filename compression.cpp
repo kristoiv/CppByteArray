@@ -51,6 +51,10 @@ Utilities::ByteArray Compression::Zlib::deflate(const Utilities::ByteArray & inp
 
             output.append((const char *)out_buffer, ZLIB_CHUNK - zstream.avail_out);
 
+            std::cout << "Iteration " << round << std::endl;
+
+            std::cout << "Iteration " << round << std::endl;
+
         }while(zstream.avail_out == 0);
 
     }while(flush != Z_FINISH);
