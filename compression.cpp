@@ -13,8 +13,7 @@
 #  define SET_BINARY_MODE(file)
 #endif
 
-//#define ZLIB_CHUNK 262144
-#define ZLIB_CHUNK 1
+#define ZLIB_CHUNK 262144
 
 Utilities::ByteArray Compression::Zlib::deflate(const Utilities::ByteArray & input, const Compression::CompressionRate rate)
 {
@@ -50,10 +49,6 @@ Utilities::ByteArray Compression::Zlib::deflate(const Utilities::ByteArray & inp
             if (result == Z_STREAM_ERROR) throw std::logic_error("Z_STREAM_ERROR fired in deflate operation");
 
             output.append((const char *)out_buffer, ZLIB_CHUNK - zstream.avail_out);
-
-            std::cout << "Iteration " << round << std::endl;
-
-            std::cout << "Iteration " << round << std::endl;
 
         }while(zstream.avail_out == 0);
 
