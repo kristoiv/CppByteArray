@@ -13,7 +13,8 @@
 #  define SET_BINARY_MODE(file)
 #endif
 
-#define ZLIB_CHUNK 262144
+//#define ZLIB_CHUNK 262144
+#define ZLIB_CHUNK 1
 
 Utilities::ByteArray Compression::Zlib::deflate(const Utilities::ByteArray & input, const Compression::CompressionRate rate)
 {

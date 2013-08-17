@@ -10,7 +10,8 @@ namespace Utilities
     {
         public:
             ByteArray();
-            ByteArray(const char * b, int len);
+            ByteArray(const char b, int len = 0);
+            ByteArray(const char * b, int len = 0);
             ~ByteArray();
             void append(const char * b, int len);
             void resize(int toSize);

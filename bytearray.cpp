@@ -1,4 +1,5 @@
 #include "bytearray.h"
+#include <string.h>
 #include <iostream>
 #include <stdexcept>
 
@@ -7,9 +8,17 @@ Utilities::ByteArray::ByteArray()
     init();
 }
 
+Utilities::ByteArray::ByteArray(const char b, int len)
+{
+    init();
+    if (len == 0) len = (int) ::strlen(&b);
+    append(&b, len);
+}
+
 Utilities::ByteArray::ByteArray(const char * b, int len)
 {
     init();
+    if (len == 0) len = (int) ::strlen(b);
     append(b, len);
 }
 
